@@ -151,8 +151,8 @@ spec:
         configuration:
           config:
           - name: urls
-            issuing_certificates: https://vault.{{ .Release.Namespace }}:8200/v1/pki/ca
-            crl_distribution_points: https://vault.{{ .Release.Namespace }}:8200/v1/pki/crl
+            issuing_certificates: https://vault:8200/v1/pki/ca
+            crl_distribution_points: https://vault:8200/v1/pki/crl
           root/generate:
           - name: internal
             common_name: vault.default

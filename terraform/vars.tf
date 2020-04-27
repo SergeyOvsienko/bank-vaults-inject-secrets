@@ -10,10 +10,13 @@ variable "vault_operator_name" {
 }
 
 variable "vault_name" {
-    default = "vault-test"
+    default = "vault"
+}
+variable "vault_namespace_enable" {
+    default = false
 }
 variable "vault_namespace" {
-    default = "vault-test"
+    default = "onepage-stage"
 }
 variable "vault_secrets_webhook_name" {
     default = "vault-secrets-webhook"

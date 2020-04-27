@@ -19,6 +19,7 @@ resource "kubernetes_namespace" "vault_operator_namespace" {
 }
 
 resource "kubernetes_namespace" "vault_namespace" {
+  count = "${var.vault_namespace_enable ? 1 : 0}"
   metadata {
     name = var.vault_namespace
   }
@@ -45,7 +46,7 @@ resource "helm_release" "vault" {
   namespace  = var.vault_namespace
   chart      = "../charts/vault"
   depends_on = [
-    helm_release.vault_operator,kubernetes_namespace.vault_namespace,
+    helm_release.vault_operator,
   ]
 }
 
